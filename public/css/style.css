@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #320139;
+}
+.msgs{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.desativo{
+    display: none;
+}
+.ativo{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    min-height: 100vh;
+    background-color: #331b3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: menu 0.3s ease-in;
+}
+
+@keyframes menu{
+    0%{
+        width: 0;
+        font-size: 0;
+    }
+    100%{
+        width: 250px;
+        font-size: large;
+    }
+}
+
+#nome{
+    margin: 15px 0 15px 0 ;
+}
+#messages::-webkit-scrollbar{
+    width: 5px;
+    height: auto;
+}
+#messages::-webkit-scrollbar-thumb{
+    background-color: #c3c3c3;
+    border-radius: 3px;
+}
+#messages{
+    width: 50%;
+    height: 80vh;
+    background-color: #331b3b;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+#messages > p{
+    margin: 5px 15px;
+}
+.inps{
+    width: 50%;
+    margin: 15px 0;
+}
+.inps #text{
+    width: 90%;
+    font-size: 18px;
+    padding: 2px;
+    text-align: center;
+    border: none;
+    background-color: #331b3b;
+    border-bottom: #333e50 1px solid;
+    outline: none;
+    border-radius: 6px 6px 0 0;
+}
+.inps #button{
+    width: 50px;
+    height: 25px;
+    background-color: #33013900;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.inps #button > i {
+    color: #333e50;
+    font-size: 18px;
+}
+@media (max-width: 1000px){
+    #messages{
+        width: 100%;
+    }
+    .inps{
+        width: 100%;
+    }
+    .inps #text{
+        width: 80%;
+        margin-left: 5px;
+    }
+}
+#deslogar{
+    width: 100%;
+    background-color: #320139;
+    margin: 15px 0;
+    border: none;
+    border-top: 1px #333e50 solid;
+    border-bottom: 1px #333e50 solid;
+    padding: 3px 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+.txt-user{
+    margin-top: 15px;
+}
+/* menu hamburguer preguiça de fazer */
+.container{
+    position: fixed;
+    z-index: 2;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #checkbox-menu{
+    position: absolute;
+    opacity: 0;
+  }
+  
+  label{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 30px;
+  }
+  
+  label span{
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 30px;
+    background: #fff;
+    transition: 0.25s ease-in-out;
+  }
+  
+  label span:nth-child(1){
+    top: 0;
+  }
+  
+  label span:nth-child(2){
+    top: 8px;
+  }
+  
+  label span:nth-child(3){
+    top: 16px;
+  }
+  
+  #checkbox-menu:checked + label span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 8px;
+  }
+  
+  #checkbox-menu:checked + label span:nth-child(2){
+    opacity: 0;
+  }
+  
+  #checkbox-menu:checked + label span:nth-child(3){
+    transform: rotate(45deg);
+    top:8px;
+  }
