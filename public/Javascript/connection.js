@@ -11,7 +11,7 @@ var nome = localStorage.getItem("nome");
 nm.innerHTML = nome;
 
 if(nome === null){
-    window.location.href = "http://localhost:3000/chat.html";
+    window.location.href = "./chat.html";
 }
 
 socket.emit('name', nome);
